@@ -3,6 +3,7 @@ import GithubContrib from "../../components/github-contrib";
 import Overview from "../../components/overview";
 import ProfileHeader from "../../components/profile-header";
 import SocialLinks from "../../components/social-links";
+import Stack from "../../components/stack";
 import { Separator } from "../../components/ui/separator";
 
 export default function Home() {
@@ -22,7 +23,9 @@ export default function Home() {
 
       <AboutMe />
       <GreatSeparator />
-
+      
+      <Stack />
+      <GreatSeparator />
     </div>
   )
 }

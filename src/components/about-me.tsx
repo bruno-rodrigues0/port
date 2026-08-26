@@ -3,8 +3,8 @@ import { Separator } from "./ui/separator"
 export default function AboutMe(){
   return (
     <div className="border-x border-line w-full pt-8 p-4">
-      <div className="">
-        <h1 className="font-handwrite text-3xl">Good morning</h1>
+      <div>
+        <h2 className="font-handwrite text-3xl">Good morning</h2>
       </div>
 
       <Separator className="absolute left-0"/>

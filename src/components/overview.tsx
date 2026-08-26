@@ -1,4 +1,4 @@
-import { Clock, CodeXml, Locate, LucideProps, Mail, MapPin, Mars, Venus, VenusAndMars } from "lucide-react";
+import { Clock, CodeXml, LucideProps, Mail, MapPin, Mars} from "lucide-react";
 
 
 export default function Overview(){
@@ -11,6 +11,7 @@ export default function Overview(){
             <li className="flex gap-2 items-center"><IconBox> <Mail size={15}/> </IconBox> brs3@cin.ufpe.br </li>
           </ul>
         </div>
+
         <div className="flex items-end">
           <ul className="flex flex-col gap-4 font-mono">
             <li className="flex gap-2"><IconBox> <Clock size={15}/> </IconBox> 08:06 PM</li>
