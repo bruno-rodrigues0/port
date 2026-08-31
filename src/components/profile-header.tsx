@@ -55,6 +55,6 @@ export default function ProfileHeader() {
           </div>
         </div>
       </div>
-    </section>   // </div>
+    </section>
   )
 }
