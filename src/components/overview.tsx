@@ -1,16 +1,16 @@
 "use client"
 
 import { Clock, CodeXml, LucideProps, Mail, MapPin, Mars} from "lucide-react";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 export default function Overview(){
 
-  const [time, setTime] = useState(new Date().toLocaleTimeString())
+  const [time, setTime] = useState(new Date().toLocaleTimeString("pt-BR", {timeZone: 'America/Sao_Paulo', hour: 'numeric', minute: 'numeric'}))
 
   useEffect(() => {
     const timerId = setInterval(() => {
-      setTime(new Date().toLocaleTimeString());
-    }, 1000);
+      setTime(new Date().toLocaleTimeString("pt-BR", {timeZone: 'America/Sao_Paulo', hour: 'numeric', minute: 'numeric'}));
+    }, 5000);
 
     return () => clearInterval(timerId);
   })
@@ -18,26 +18,34 @@ export default function Overview(){
   return (
     <div className="w-180 border-x border-line pt-12 p-4 grid grid-cols-2">
         <div>
-          <ul className="flex flex-col gap-4 font-mono">
-            <li className="flex gap-2 items-center"><IconBox> <CodeXml size={15}/> </IconBox> Computer Scientist: CIn-UFPE </li>
-            <li className="flex gap-2 items-center"><IconBox> <MapPin size={15}/> </IconBox> Recife - PE, Brazil </li>
-            <li className="flex gap-2 items-center"><IconBox> <Mail size={15}/> </IconBox> brs3@cin.ufpe.br </li>
+          <ul className="flex flex-col gap-4 font-sans">
+            <OverviewItem text="Cumputer Scientist: CIn - UFPE"><CodeXml size={15}/></OverviewItem>
+            <OverviewItem text="Recife - PE, Brazil"><MapPin size={15}/></OverviewItem>
+            <OverviewItem text="brunorodriguesmtv0@gmail.com"><Mail size={15}/></OverviewItem>
           </ul>
         </div>
 
         <div className="flex items-end">
           <ul className="flex flex-col gap-4 font-mono">
-            <li className="flex gap-2"><IconBox> <Clock size={15}/> </IconBox> {time} <span className="text-muted-foreground">(GMT-3)</span></li>
-            <li className="flex gap-2"><IconBox> <Mars size={15}/> </IconBox> he/him </li>
+            <OverviewItem text={(
+              <>{time} <span className="text-muted-foreground">(GMT-03)</span></>
+            )}><Clock size={15}/></OverviewItem>
+            <OverviewItem text="he/him"><Mars size={15}/></OverviewItem>
           </ul>
         </div>
     </div>
   )
 }
 
+export function OverviewItem({children, text}: {children: ReactNode, text:string | ReactNode}) {
+  return(
+    <li className="flex gap-2 items-center text-sm font-medium"><IconBox> {children} </IconBox> {text} </li>
+  )
+}
+
 export function IconBox({children}: LucideProps){
   return (
-    <div className="border border-line rounded-md bg-secondary p-1 w-fit flex justify-center items-center">
+    <div className="border border-line rounded-md bg-primary-foreground p-1 w-fit flex justify-center items-center">
       {children}
     </div>
   )

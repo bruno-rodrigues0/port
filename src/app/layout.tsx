@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import { Just_Another_Hand } from "next/font/google";
+import { Caveat } from "next/font/google";
  
-const handwrite = Just_Another_Hand({
+const handwrite = Caveat({
   weight: "400",
   style: "normal",
   variable: "--font-handwrite"
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${handwrite.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${handwrite.variable} h-full antialiased scroll-smooth selection:bg-primary selection:text-secondary`}
       suppressHydrationWarning
     >
         <body className="min-h-full flex flex-col" suppressHydrationWarning>

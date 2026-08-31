@@ -10,20 +10,18 @@ export default function SiteHeader(){
     <>
     <header className="sticky top-0 z-50 h-auto py-2 items-center bg-background">
     <div className="flex justify-between w-180 mx-auto px-2">
-      <Link href="/" className="content-center">
+      <a href="#" className="content-center">
         <BSMark/>
-      </Link>
+      </a>
 
       <div className="flex gap-2 items-center">
         <NavigationMenu>
           <NavigationMenuList className="w-full flex justify-between">
 
-
-            <NavItem href="#">About</NavItem>
-            <NavItem href="#">Projects</NavItem>
+            <NavItem href="#about">About</NavItem>
+            <NavItem href="#projects">Projects</NavItem>
             <NavItem href="#">Contacts</NavItem>
             <NavItem href="#">Credits</NavItem>
-
 
           </NavigationMenuList>
 

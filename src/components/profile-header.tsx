@@ -7,7 +7,7 @@ import { TextFlip } from "./text-flip";
 
 export default function ProfileHeader() {
   return (
-    <div className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
+    <section id="profile-header" className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
       <div className="relative w-full h-87 col-span-2 p-2 sm:col-span-1 sm:col-start-2 sm:p-4 z-20">
       <figure className="absolute w-[115%] h-[115%] -top-12 -left-10 col-span-2 p-2 z-20">
         <div className="absolute rotate-30 border-t border-secondary w-full top-53 left-0 -z-10"></div>
@@ -26,7 +26,7 @@ export default function ProfileHeader() {
           <Separator className="absolute left-0 w-screen -z-10"/>
           <div className="group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none">
             <Image
-              className="ring-border ring-offset-background rounded-full w-30 h-30"
+              className="ring-border ring-offset-background rounded-full w-33 h-33 p-1"
               src={Me}
               alt="Photo of Bruno Silva"
             />
@@ -55,6 +55,6 @@ export default function ProfileHeader() {
           </div>
         </div>
       </div>
-    </div>   // </div>
+    </section>   // </div>
   )
 }
