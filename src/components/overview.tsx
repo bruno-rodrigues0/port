@@ -1,7 +1,20 @@
-import { Clock, CodeXml, LucideProps, Mail, MapPin, Mars} from "lucide-react";
+"use client"
 
+import { Clock, CodeXml, LucideProps, Mail, MapPin, Mars} from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Overview(){
+
+  const [time, setTime] = useState(new Date().toLocaleTimeString())
+
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      setTime(new Date().toLocaleTimeString());
+    }, 1000);
+
+    return () => clearInterval(timerId);
+  })
+
   return (
     <div className="w-180 border-x border-line pt-12 p-4 grid grid-cols-2">
         <div>
@@ -14,7 +27,7 @@ export default function Overview(){
 
         <div className="flex items-end">
           <ul className="flex flex-col gap-4 font-mono">
-            <li className="flex gap-2"><IconBox> <Clock size={15}/> </IconBox> 08:06 PM</li>
+            <li className="flex gap-2"><IconBox> <Clock size={15}/> </IconBox> {time} <span className="text-muted-foreground">(GMT-3)</span></li>
             <li className="flex gap-2"><IconBox> <Mars size={15}/> </IconBox> he/him </li>
           </ul>
         </div>

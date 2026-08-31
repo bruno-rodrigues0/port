@@ -1,48 +1,52 @@
-import Link from "next/link";
-import { ModeToggle } from "./mode-toggle";
+import Link, { LinkProps } from "next/link";
 import { NavigationMenu, NavigationMenuLink, NavigationMenuList, NavigationMenuItem} from "./ui/navigation-menu";
 import { BSMark } from "./bs-mark";
 import { Separator } from "./ui/separator";
+import { ThemeSwitcher } from "./theme-switcher";
+import { ReactNode } from "react";
 
 export default function SiteHeader(){
   return (
-    <header className="sticky top-0 z-50 h-auto p-2 mx-auto w-180 items-center bg-background">
-    <div className="flex w-full justify-between">
+    <>
+    <header className="sticky top-0 z-50 h-auto py-2 items-center bg-background">
+    <div className="flex justify-between w-180 mx-auto px-2">
       <Link href="/" className="content-center">
         <BSMark/>
       </Link>
-       
-      <NavigationMenu>
-        <NavigationMenuList className="w-full flex justify-between">
 
-          <NavigationMenuItem>
-              <NavigationMenuLink className="text-xs">About</NavigationMenuLink>
-          </NavigationMenuItem>
+      <div className="flex gap-2 items-center">
+        <NavigationMenu>
+          <NavigationMenuList className="w-full flex justify-between">
 
-          <Separator orientation="vertical" />
 
-          <NavigationMenuItem>
-              <NavigationMenuLink className="text-xs">Projects</NavigationMenuLink>
-          </NavigationMenuItem>
+            <NavItem href="#">About</NavItem>
+            <NavItem href="#">Projects</NavItem>
+            <NavItem href="#">Contacts</NavItem>
+            <NavItem href="#">Credits</NavItem>
 
-          <Separator orientation="vertical" />
 
-          <NavigationMenuItem>
-              <NavigationMenuLink className="text-xs">Contacts</NavigationMenuLink>
-          </NavigationMenuItem>
+          </NavigationMenuList>
 
-          <Separator orientation="vertical" />
-
-          <NavigationMenuItem>
-              <NavigationMenuLink className="text-xs">Credits</NavigationMenuLink>
-          </NavigationMenuItem>
-
-        </NavigationMenuList>
-
-      </NavigationMenu>
-      <ModeToggle/>
+        </NavigationMenu>
+        <Separator orientation="vertical" className="h-[70%] mt-1"/>
+        <ThemeSwitcher/>
+      </div>
     </div>
-    <Separator className="absolute mt-2 left-0"/>
     </header>
+    <Separator className="fixed mt-2 left-0 top-10 z-100"/>
+    </>
+  )
+}
+
+const NavItem = ({children, href}: {children: ReactNode, href: string}) => {
+  return (
+    <NavigationMenuItem>
+        <NavigationMenuLink 
+          className="text-ms font-mono text-muted-foreground hover:bg-inherit hover:text-primary focus:bg-inherit " 
+          href={href}
+        >
+          {children}
+        </NavigationMenuLink>
+    </NavigationMenuItem>
   )
 }

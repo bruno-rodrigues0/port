@@ -10,7 +10,7 @@ const OTHERS = ["Opencv", "Opengl", "Arch Linux", "Neovim"]
 
 export default function Stack() {
   return(
-    <div className="border-x border-line pt-8 p-4">
+    <div className="border-x border-line pt-8 p-4" id="stack">
       <div>
         <h2 className="text-3xl font-medium">Stack</h2>
       </div>
