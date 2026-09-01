@@ -9,18 +9,21 @@ export default function ProfileHeader() {
   return (
     <section id="profile-header" className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
       <div className=" w-full h-87 max-sm:h-52 col-span-2 p-2 sm:col-span-1 sm:col-start-2 sm:p-4 z-20">
-      <figure className="absolute w-167 max-sm:max-w-105 h-[115%] max-sm:h-full top-0 left-[50%] max-sm:top-4 -translate-x-1/2  col-span-2 p-2 z-20">
-        <div className="max-sm:hidden">
-            <div className="absolute rotate-30 border-t border-secondary w-[111%] top-53 -left-6.5 -z-10"></div>
-            <div className="absolute rotate-30 border-t border-secondary w-[105%] top-54 -left-95.5 -z-10"></div>
-            <div className="absolute -rotate-30 border-t border-secondary w-[105%] top-54 left-44 -z-10"></div>
-        </div>
-        <SpotlightLogo/>
+        <figure className="absolute w-130 max-sm:w-full max-sm:max-w-80 h-[115%] max-sm:h-30 top-15 left-[55%] max-sm:left-1/2 -translate-x-1/2 col-span-2 p-2 z-20 flex items-center justify-center">
+          {/* <div className="max-sm:hidden"> */}
+          {/*     <div className="absolute rotate-30 border-t border-secondary w-200 top-[51px] -left-6.5 -z-10"></div> */}
+          {/*     <div className="absolute rotate-30 border-t border-secondary w-[105%] top-54 -left-95.5 -z-10"></div> */}
+          {/*     <div className="absolute -rotate-30 border-t border-secondary w-[105%] top-54 left-44 -z-10"></div> */}
+          {/* </div> */}
+          
+          <div className="w-full h-full max-sm:max-h-25">
+            <SpotlightLogo/>
+          </div>
 
-        <figcaption className="pointer-events-none absolute right-18 bottom-4 text-sm leading-none tracking-wide text-zinc-500 tabular-nums select-none max-sm:hidden">
-          Fig. 1.
-        </figcaption>
-      </figure>
+  <figcaption className="pointer-events-none absolute right-18 bottom-4 text-sm leading-none tracking-wide text-zinc-500 tabular-nums select-none max-sm:hidden">
+    Fig. 1.
+  </figcaption>
+</figure>
       </div>
 
       <div className="flex flex-col sm:row-span-2 sm:row-start-1">

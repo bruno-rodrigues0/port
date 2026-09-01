@@ -89,8 +89,10 @@ export function SpotlightLogo() {
   return (
     <motion.svg
       ref={ref}
-      className="h-auto w-full touch-manipulation [--pattern:color-mix(in_oklab,var(--foreground)_12%,var(--background))] [--stroke:color-mix(in_oklab,var(--foreground)_16%,var(--background))]"
-      viewBox="0 0 324 188"
+      className="w-full h-auto object-contain touch-manipulation [--pattern:color-mix(in_oklab,var(--foreground)_12%,var(--background))] [--stroke:color-mix(in_oklab,var(--foreground)_16%,var(--background))]"
+      viewBox="35 30 250 150"
+      width={324}
+      height={188}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden
