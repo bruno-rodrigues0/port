@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 export default function SocialLinks(){
   return (
-    <div className="w-180 border-x border-line p-2 flex">
+    <div className="border-x border-line p-2 flex">
       <ul className="flex gap-2 p-2">
         <SocialLink href="https://github.com/bruno-rodrigues0">
           <svg

@@ -9,13 +9,13 @@ export default function SiteHeader(){
   return (
     <>
     <header className="sticky top-0 z-50 h-auto py-2 items-center bg-background">
-    <div className="flex justify-between w-180 mx-auto px-2">
+    <div className="flex justify-between max-w-180 mx-auto px-2">
       <a href="#" className="content-center">
         <BSMark/>
       </a>
 
       <div className="flex gap-2 items-center">
-        <NavigationMenu>
+        <NavigationMenu className="max-sm:hidden">
           <NavigationMenuList className="w-full flex justify-between">
 
             <NavItem href="#about">About</NavItem>
@@ -26,7 +26,7 @@ export default function SiteHeader(){
           </NavigationMenuList>
 
         </NavigationMenu>
-        <Separator orientation="vertical" className="h-[70%] mt-1"/>
+        <Separator orientation="vertical" className="h-[70%] mt-1 max-sm:hidden"/>
         <ThemeSwitcher/>
       </div>
     </div>

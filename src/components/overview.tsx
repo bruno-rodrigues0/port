@@ -16,7 +16,7 @@ export default function Overview(){
   })
 
   return (
-    <div className="w-180 border-x border-line pt-12 p-4 grid grid-cols-2">
+    <section className="border-x border-line pt-12 p-4 grid grid-cols-2 max-sm:grid-cols-1 gap-4">
         <div>
           <ul className="flex flex-col gap-4 font-sans">
             <OverviewItem text="Cumputer Scientist: CIn - UFPE"><CodeXml size={15}/></OverviewItem>
@@ -33,7 +33,7 @@ export default function Overview(){
             <OverviewItem text="he/him"><Mars size={15}/></OverviewItem>
           </ul>
         </div>
-    </div>
+    </section>
   )
 }
 

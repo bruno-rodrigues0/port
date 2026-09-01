@@ -4,14 +4,13 @@ import GithubContrib from "../../components/github-contrib";
 import Overview from "../../components/overview";
 import ProfileHeader from "../../components/profile-header";
 import Projects from "../../components/projects";
-import SiteFooter from "../../components/site-footer";
 import SocialLinks from "../../components/social-links";
 import Stack from "../../components/stack";
 import { Separator } from "../../components/ui/separator";
 
 export default function Home() {
   return (
-    <div className="w-180 mx-auto">
+    <div className="max-w-180 mx-auto">
       <ProfileHeader/>
       <GreatSeparator/>
 

@@ -10,9 +10,11 @@ export default function ProfileHeader() {
     <section id="profile-header" className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
       <div className="relative w-full h-87 col-span-2 p-2 sm:col-span-1 sm:col-start-2 sm:p-4 z-20">
       <figure className="absolute w-[115%] h-[115%] -top-12 -left-10 col-span-2 p-2 z-20">
-        <div className="absolute rotate-30 border-t border-secondary w-full top-53 left-0 -z-10"></div>
-        <div className="absolute rotate-30 border-t border-secondary w-[105%] top-54 -left-95.5 -z-10"></div>
-        <div className="absolute -rotate-30 border-t border-secondary w-[105%] top-54 left-44 -z-10"></div>
+        <div className="max-sm:hidden">
+            <div className="absolute rotate-30 border-t border-secondary w-full top-53 left-0 -z-10"></div>
+            <div className="absolute rotate-30 border-t border-secondary w-[105%] top-54 -left-95.5 -z-10"></div>
+            <div className="absolute -rotate-30 border-t border-secondary w-[105%] top-54 left-44 -z-10"></div>
+        </div>
         <SpotlightLogo/>
 
         <figcaption className="pointer-events-none absolute right-18 bottom-4 text-sm leading-none tracking-wide text-zinc-500 tabular-nums select-none ">

@@ -3,6 +3,30 @@ import { Badge } from "./ui/badge";
 import { Separator } from "./ui/separator";
 import { BACKEND, FRONTEND, LANGUAGES, OTHERS, TOOLS } from "../constants";
 
+const AREAS = [
+  {
+    key: "Language",
+    value: LANGUAGES
+  },
+  {
+    key: "Backend",
+    value: BACKEND
+  },
+  {
+    key: "Frontend",
+    value: FRONTEND
+  },
+  {
+    key: "Tools",
+    value: TOOLS
+  },
+  {
+    key: "Others",
+    value: OTHERS
+  },
+]
+  
+
 export default function Stack() {
   return(
     <div className="border-x border-line pt-8 p-4" id="stack">
@@ -10,36 +34,18 @@ export default function Stack() {
       <Separator className="absolute left-0"/>
 
       <div className="pt-2">
-        <ul className="space-y-4">
-          <StackItem num="01" label="Language">
-            {LANGUAGES.map(item => (
-              <Badge key={item.key} variant="outline">{item.icon}{item.title}</Badge>
-            ))}
-          </StackItem>
+        <ul className="space-y-5">
 
-          <StackItem num="02" label="Backend & Database">
-            {BACKEND.map(item => (
-              <Badge key={item.key} variant="outline">{item.icon}{item.title}</Badge>
-            ))}
-          </StackItem>
-
-          <StackItem num="03" label="Frontend">
-            {FRONTEND.map(item => (
-              <Badge key={item.key} variant="outline">{item.icon}{item.title}</Badge>
-            ))}
-          </StackItem>
-
-          <StackItem num="04" label="Tools and plataforms">
-            {TOOLS.map(item => (
-              <Badge key={item.key} variant="outline">{item.icon}{item.title}</Badge>
-            ))}
-          </StackItem>
-
-          <StackItem num="05" label="Others">
-            {OTHERS.map(item => (
-              <Badge key={item.key} variant="outline">{item.icon}{item.title}</Badge>
-            ))}
-          </StackItem>
+          {AREAS.map((area, index) => (
+            <>
+            <StackItem key={area.key} num={`0${index}`} label={area.key}>
+              {area.value.map(item => (
+                <Badge key={item.key} variant="outline" className="bg-primary-foreground">{item.icon}{item.title}</Badge>
+              ))}
+            </StackItem>
+            <Separator className="absolute left-0 sm:hidden" />
+            </>
+          ))}
         </ul>
       </div>
     </div>
@@ -48,7 +54,7 @@ export default function Stack() {
 
 export function StackItem({num, label, children}: {num: string, label: string, children: React.ReactNode}) {
   return (
-    <li className="grid grid-cols-6 font-mono">
+    <li className="grid grid-cols-6 font-mono max-sm:block max-sm:space-y-2">
       <div className="col-span-2 text-[.9rem]">
         <span className="text-ring">{num}. </span>
         <span>{label}</span>
