@@ -8,8 +8,8 @@ import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "./chevrons-up-down
 import { Link as LinkIcon } from "lucide-react"
 import Link from "next/link"
 
-export default function ProjectCollapsible({project, openProp = false}: {project: Project, openProp?: boolean}) {
-  const [open, setOpen] = useState(openProp)
+export default function ProjectCollapsible({project, defaultOpen = false}: {project: Project, defaultOpen?: boolean}) {
+  const [open, setOpen] = useState(defaultOpen)
   const chevronsRef = useRef<ChevronsUpDownIconHandle>(null)
 
   const handleOpen = () => {
@@ -23,7 +23,7 @@ export default function ProjectCollapsible({project, openProp = false}: {project
 
   return (
     <>
-      <Collapsible className="py-4 transition-all" open={open} onOpenChange={handleOpen}>
+      <Collapsible className="py-4 transition-all" defaultOpen={defaultOpen} open={open} onOpenChange={handleOpen}>
         <div className="flex max-w-full items-center">
           <div className="flex-1 flex justify-start">
             <div className="bg-primary-foreground border border-muted rounded-md w-8 h-8 p-2 flex items-center justify-center">

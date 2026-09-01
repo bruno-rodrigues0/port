@@ -21,7 +21,7 @@ export default function SiteHeader(){
             <NavItem href="#about">About</NavItem>
             <NavItem href="#projects">Projects</NavItem>
             <NavItem href="#">Contacts</NavItem>
-            <NavItem href="#">Credits</NavItem>
+            <NavItem href="#credits">Credits</NavItem>
 
           </NavigationMenuList>
 

@@ -1,4 +1,6 @@
-import SiteFooter from "../../components/site-footer";
+import { NameGradient } from "../../components/name-gradient";
+import { ScrollToTop } from "../../components/scroll-to-top";
+import { SiteFooter } from "../../components/site-footer";
 import SiteHeader from "../../components/site-header";
 
 export default function HomeLayout({ children }: LayoutProps<"/">) {
@@ -6,7 +8,9 @@ export default function HomeLayout({ children }: LayoutProps<"/">) {
     <div className="relative isolate">
       <SiteHeader/>
       <main className="max-w-screen px-2"> {children} </main>
-      <SiteFooter />
+      <SiteFooter /> 
+      <NameGradient/>
+      <ScrollToTop className="w-8 h-8"/>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { SpotlightLogo } from "./spotlight-logo";
 import Me from "@/assets/me.webp"
-import { VerifiedIcon } from "lucide-react";
+import { Verified, VerifiedIcon } from "lucide-react";
 import { Separator } from "./ui/separator";
 import { TextFlip } from "./text-flip";
 
@@ -42,7 +42,7 @@ export default function ProfileHeader() {
               Bruno Silva
             </h1>
 
-            <VerifiedIcon className="size-4.5 select-none" aria-hidden />
+            <Verified className="size-4.5 select-none" aria-hidden />
           </div>
 
           <div className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">

@@ -37,14 +37,14 @@ export default function Stack() {
         <ul className="space-y-5">
 
           {AREAS.map((area, index) => (
-            <>
-            <StackItem key={area.key} num={`0${index}`} label={area.key}>
-              {area.value.map(item => (
-                <Badge key={item.key} variant="outline" className="bg-primary-foreground">{item.icon}{item.title}</Badge>
-              ))}
-            </StackItem>
-            <Separator className="absolute left-0 sm:hidden" />
-            </>
+            <div key={index}>
+              <StackItem key={area.key} num={`0${index}`} label={area.key}>
+                {area.value.map(item => (
+                  <Badge key={item.key} variant="outline" className="bg-primary-foreground">{item.icon}{item.title}</Badge>
+                ))}
+              </StackItem>
+              <Separator className="absolute left-0 sm:hidden" />
+            </div>
           ))}
         </ul>
       </div>

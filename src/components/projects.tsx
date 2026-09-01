@@ -9,8 +9,8 @@ export default function Projects() {
       <Separator className="absolute left-0"/>
 
       <div>
-        {PROJECTS.map(project => (
-          <ProjectCollapsible key={project.key} project={project}/>
+        {PROJECTS.map((project, index) => (
+          <ProjectCollapsible key={project.key} project={project} defaultOpen={index == 0 ? true : false}/>
         ))}
       </div>
 
