@@ -3,13 +3,15 @@
 import { Clock, CodeXml, LucideProps, Mail, MapPin, Mars} from "lucide-react";
 import { ReactNode, useEffect, useState } from "react";
 
+const localeOpts: Intl.DateTimeFormatOptions = {timeZone: 'America/Sao_Paulo', hour: 'numeric', minute: 'numeric'}
+
 export default function Overview(){
 
-  const [time, setTime] = useState(new Date().toLocaleTimeString("pt-BR", {timeZone: 'America/Sao_Paulo', hour: 'numeric', minute: 'numeric'}))
+  const [time, setTime] = useState(new Date().toLocaleTimeString("pt-BR", localeOpts))
 
   useEffect(() => {
     const timerId = setInterval(() => {
-      setTime(new Date().toLocaleTimeString("pt-BR", {timeZone: 'America/Sao_Paulo', hour: 'numeric', minute: 'numeric'}));
+      setTime(new Date().toLocaleTimeString("pt-BR", localeOpts));
     }, 5000);
 
     return () => clearInterval(timerId);

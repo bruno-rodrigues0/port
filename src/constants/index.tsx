@@ -1,19 +1,33 @@
-import { ReactElement } from "react"
+import { CodeXml, Infinity } from "lucide-react"
+import { ReactElement, ReactNode } from "react"
+import { Badge } from "../components/ui/badge"
 
 
 export type TechStack = {
   key: string,
   title: string,
-  icon: ReactElement
+  icon: ReactNode
 }
 
 export type Project = {
   key: string,
   title: string,
-  description: string | ReactElement,
-  labels?: ReactElement,
+  meta: string | ReactNode,
+  description: string | ReactNode,
+  labels?: ReactNode,
   url: string,
-  logo: string | ReactElement
+  logo: string | ReactNode
+}
+
+export type Education = {
+  key: string,
+  school: string,
+  degree?: string,
+  fieldOfStudy?: string,
+  period: string | ReactNode,
+  description: string,
+  labels ?: ReactNode,
+  logo: string | ReactNode
 }
 
 export const LANGUAGES: TechStack[] = [
@@ -414,15 +428,80 @@ export const PROJECTS: Project[] = [
   {
     key: "apple_website",
     title: "Apple Website",
+    meta: <p className="flex items-center gap-1"><span>08.2026 - </span><Infinity width={18}/> </p>,
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quos libero sit incidunt officia consequuntur, animi debitis dolorum ipsam voluptate nesciunt optio rem cumque totam accusamus illum voluptatibus hic quam!",
     url: "",
-    logo: (<></>)
+    labels: (
+      <>
+        <Badge variant="outline" className="bg-primary-foreground">Next.js</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">Typescript</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">Gsap</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">shadcnui</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">next-video</Badge>
+      </>
+    ),
+    logo: <CodeXml className="w-5"/>
   },
   {
     key: "concord",
     title: "Concord",
+    meta: <p className="flex items-center gap-1"><span>01.2026 - </span><Infinity width={18}/> </p>,
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quos libero sit incidunt officia consequuntur, animi debitis dolorum ipsam voluptate nesciunt optio rem cumque totam accusamus illum voluptatibus hic quam!",
     url: "",
-    logo: (<></>)
+    labels: (
+      <>
+        <Badge variant="outline" className="bg-primary-foreground">Next.js</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">Typescript</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">shadcnui</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">Fastify</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">Swagger</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">Zod</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">Better-auth</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">Postgres</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">Prisma</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">Nginx</Badge>
+        <Badge variant="outline" className="bg-primary-foreground">Docker</Badge>
+      </>
+    ),
+    logo: <CodeXml className="w-5"/>
+  },
+]
+
+
+export const EDUCATION: Education[] = [
+  {
+    school: "CIn - UFPE",
+    degree: "Bachelor's degree",
+    description: "# Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias molestias veritatis excepturi molestiae praesentium vel labore quam. Accusantium dolorem animi obcaecati, illum aliquid fuga dicta ipsam laudantium quis reiciendis molestias.",
+    key: "ufpe",
+    fieldOfStudy: "Computer Science",
+    logo: <></>,
+    labels: (
+      <>
+        <Badge variant="outline">Python</Badge>
+        <Badge variant="outline">C++</Badge>
+        <Badge variant="outline">Verilog</Badge>
+        <Badge variant="outline">Software Engineering</Badge>
+      </>
+    ),
+    period: <p className="flex gap-1 items-center">2026 - <Infinity width={18}/></p>
+  },
+  {
+    school: "Instituto Federal Baiano",
+    degree: "Secondary",
+    description: "# Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias molestias veritatis excepturi molestiae praesentium vel labore quam. Accusantium dolorem animi obcaecati, illum aliquid fuga dicta ipsam laudantium quis reiciendis molestias.",
+    key: "ifbaiano",
+    logo: <></>,
+    labels: (
+      <>
+        <Badge variant="outline">HTML</Badge>
+        <Badge variant="outline">CSS</Badge>
+        <Badge variant="outline">C</Badge>
+        <Badge variant="outline">PHP</Badge>
+        <Badge variant="outline">Python</Badge>
+        <Badge variant="outline">Django</Badge>
+      </>
+    ),
+    period: <p>2022 - 2025</p>
   },
 ]

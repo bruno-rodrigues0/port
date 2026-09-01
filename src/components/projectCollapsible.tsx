@@ -24,31 +24,36 @@ export default function ProjectCollapsible({project, openProp = false}: {project
   return (
     <>
       <Collapsible className="py-4 transition-all" open={open} onOpenChange={handleOpen}>
-        <div className="flex w-full">
-          <div className="flex-1">
-            <figure className="">
+        <div className="flex max-w-full items-center">
+          <div className="flex-1 flex justify-start">
+            <div className="bg-primary-foreground border border-muted rounded-md w-8 h-8 p-2 flex items-center justify-center">
               {project.logo}
-            </figure>
+            </div>
           </div>
 
-          <div className="min-w-10/12 flex flex-col justify-center">
+          <div className="w-full flex flex-col justify-start h-auto px-4">
             <p>{project.title}</p>
-            <span>{project.labels}</span>
+            <span className="text-sm text-muted-foreground">{project.meta}</span>
           </div>
 
           <div className="flex-1 flex justify-end items-center gap-2">
             <Link href={project.url}>
-              <LinkIcon className="w-6.5 h-6.5 border border-muted bg-primary-foreground rounded-md p-1"/>
+              <LinkIcon className="w-5.5 h-5.5 p-1"/>
             </Link>
-            <CollapsibleTrigger><ChevronsUpDownIcon ref={chevronsRef} className="w-6.5 h-6.5 border border-muted bg-primary-foreground rounded-md p-1"/></CollapsibleTrigger>
+            <CollapsibleTrigger>
+              <div className="text-muted-foreground [&_svg]:h-lh [&_svg]:w-4">
+                <ChevronsUpDownIcon ref={chevronsRef} className="tecursor-pointer"/>
+              </div>
+            </CollapsibleTrigger>
           </div>
         </div>
 
         <CollapsibleContent>
           <div className="py-2">
             <Separator className="absolute left-0"/>
-            <div className="pt-4">
-              {project.description} 
+            <div className="pt-4 space-y-4">
+              <p>{project.description}</p>
+              <span className="flex gap-2 flex-wrap">{project.labels}</span>
             </div>
           </div>
         </CollapsibleContent>
