@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 
 export default function SocialLinks(){
   return (
-    <div className="border-x border-line p-2 flex">
+    <section className="border-x border-line p-2 flex" id="social-links">
       <ul className="flex gap-2 p-2">
         <SocialLink href="https://github.com/bruno-rodrigues0">
           <svg
@@ -28,14 +28,14 @@ export default function SocialLinks(){
           </svg>
         </SocialLink>
       </ul>
-    </div>
+    </section>
   )
 }
 
 export function SocialLink({children, href}: {children: ReactNode, href: string}) {
   return (
     <li className="border border-line rounded-sm p-1.5 bg-primary-foreground">
-      <Link href={href} target="blank">
+      <Link href={href} target="_blank">
         {children}
       </Link>
     </li>

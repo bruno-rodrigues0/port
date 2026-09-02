@@ -6,7 +6,7 @@ import { Separator } from "./ui/separator"
 import { Project } from "@/constants"
 import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "./chevrons-up-down-icon"
 import { Link as LinkIcon } from "lucide-react"
-import Link from "next/link"
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card"
 
 export default function ProjectCollapsible({project, defaultOpen = false}: {project: Project, defaultOpen?: boolean}) {
   const [open, setOpen] = useState(defaultOpen)
@@ -37,9 +37,15 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
           </div>
 
           <div className="flex-1 flex justify-end items-center gap-2">
-            <Link href={project.url}>
-              <LinkIcon className="w-5.5 h-5.5 p-1"/>
-            </Link>
+            <HoverCard>
+              <HoverCardTrigger delay={.1} href={project.url}>
+                <LinkIcon className="w-5.5 h-5.5 p-1"/>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-fit">
+                <span>Go to project</span>
+              </HoverCardContent>
+            </HoverCard>
+
             <CollapsibleTrigger>
               <div className="text-muted-foreground [&_svg]:h-lh [&_svg]:w-4">
                 <ChevronsUpDownIcon ref={chevronsRef} className="tecursor-pointer"/>

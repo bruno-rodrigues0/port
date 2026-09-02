@@ -25,7 +25,7 @@ export type Education = {
   degree?: string,
   fieldOfStudy?: string,
   period: string | ReactNode,
-  description: string,
+  description: string | ReactNode,
   labels ?: ReactNode,
   logo: string | ReactNode
 }
@@ -472,7 +472,18 @@ export const EDUCATION: Education[] = [
   {
     school: "CIn - UFPE",
     degree: "Bachelor's degree",
-    description: "# Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias molestias veritatis excepturi molestiae praesentium vel labore quam. Accusantium dolorem animi obcaecati, illum aliquid fuga dicta ipsam laudantium quis reiciendis molestias.",
+    description: (<>
+      <ul className="list-disc marker:text-ring list-inside">
+        <li>Learned about: </li>
+        <ul className="list-disc list-inside marker:text-secondary pl-6">
+          <li>Fundamentals of computing.</li>
+          <li>Data structure and algoriths.</li>
+          <li>Object Oriented Programing.</li>
+          <li>Digital systems.</li>
+          <li>Software engineering.</li>
+        </ul>
+      </ul>
+    </>),
     key: "ufpe",
     fieldOfStudy: "Computer Science",
     logo: <></>,
@@ -488,8 +499,23 @@ export const EDUCATION: Education[] = [
   },
   {
     school: "Instituto Federal Baiano",
-    degree: "Secondary",
-    description: "# Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias molestias veritatis excepturi molestiae praesentium vel labore quam. Accusantium dolorem animi obcaecati, illum aliquid fuga dicta ipsam laudantium quis reiciendis molestias.",
+    degree: "High School",
+    description: (<>
+      <ul className="list-disc marker:text-ring list-inside">
+        <li>Member of the largest drone team in the state of Bahia</li>
+        <li>Two-time winner of a local programming contest.</li>
+        <li>Third place in the Santa Catarina drone competition.</li>
+        <li>Learned about web development</li>
+        <li>Two written articles.</li>
+        <li>Academic projects with: </li>
+        <ul className="list-disc list-inside marker:text-secondary pl-6">
+          <li>Django</li>
+          <li>PHP</li>
+        </ul>
+        <li>Learned the basics of requirements engineering.</li>
+        <li>Learned the basics of databases.</li>
+      </ul>
+    </>),
     key: "ifbaiano",
     logo: <></>,
     labels: (

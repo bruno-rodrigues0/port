@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { SpotlightLogo } from "./spotlight-logo";
-import Me from "@/assets/me.webp"
-import { Verified, VerifiedIcon } from "lucide-react";
+import Me from "@public/me.webp"
+import { Verified } from "lucide-react";
 import { Separator } from "./ui/separator";
 import { TextFlip } from "./text-flip";
 

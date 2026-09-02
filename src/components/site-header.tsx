@@ -1,35 +1,45 @@
-import Link, { LinkProps } from "next/link";
 import { NavigationMenu, NavigationMenuLink, NavigationMenuList, NavigationMenuItem} from "./ui/navigation-menu";
 import { BSMark } from "./bs-mark";
 import { Separator } from "./ui/separator";
 import { ThemeSwitcher } from "./theme-switcher";
 import { ReactNode } from "react";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 
 export default function SiteHeader(){
   return (
     <>
     <header className="sticky top-0 z-50 h-auto py-2 items-center bg-background">
-    <div className="flex justify-between max-w-180 mx-auto px-2">
-      <a href="#" className="content-center">
-        <BSMark/>
-      </a>
+      <div className="flex justify-between max-w-180 mx-auto px-2">
+        <a href="#" className="content-center">
+          <BSMark/>
+        </a>
 
-      <div className="flex gap-2 items-center">
-        <NavigationMenu className="max-sm:hidden">
-          <NavigationMenuList className="w-full flex justify-between">
+        <div className="flex gap-2 items-center">
+          <NavigationMenu className="max-sm:hidden">
+            <NavigationMenuList className="w-full flex justify-between">
 
-            <NavItem href="#about">About</NavItem>
-            <NavItem href="#projects">Projects</NavItem>
-            <NavItem href="#">Contacts</NavItem>
-            <NavItem href="#credits">Credits</NavItem>
+              <NavItem href="#about">About</NavItem>
+              <NavItem href="#social-links">Contacts</NavItem>
+              <NavItem href="#projects">Projects</NavItem>
+              <NavItem href="#credits">Credits</NavItem>
 
-          </NavigationMenuList>
+            </NavigationMenuList>
 
-        </NavigationMenu>
-        <Separator orientation="vertical" className="h-[70%] mt-1 max-sm:hidden"/>
-        <ThemeSwitcher/>
+          </NavigationMenu>
+
+          <Separator orientation="vertical" className="h-[70%] mt-1 max-sm:hidden"/>
+
+          <HoverCard>
+            <HoverCardTrigger delay={.1}>
+              <ThemeSwitcher/>
+            </HoverCardTrigger>
+
+            <HoverCardContent className="w-fit">
+              <span>Theme</span>
+            </HoverCardContent>
+          </HoverCard>
+        </div>
       </div>
-    </div>
     </header>
     <Separator className="fixed mt-2 left-0 top-10 z-100"/>
     </>

@@ -6,10 +6,9 @@ import { cn } from "../../lib/utils"
 import { GraduationCapIcon } from "lucide-react"
 import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "../chevrons-up-down-icon"
 import { Separator } from "../ui/separator"
-import Markdown from "react-markdown"
 
-export function EducationItem({ item }: { item: Education }) {
-  const [open, setOpen] = useState<boolean>(false)
+export function EducationItem({ item, defaultOpen }: { item: Education, defaultOpen: boolean}) {
+  const [open, setOpen] = useState<boolean>(defaultOpen)
   const chevronsRef = useRef<ChevronsUpDownIconHandle>(null)
 
   const handleOpenChange = () => {
@@ -30,7 +29,7 @@ export function EducationItem({ item }: { item: Education }) {
         <span className="size-full -translate-y-2.25 rounded-bl-sm border-b border-l" />
       </div>
 
-      <Collapsible open={open} disabled={!item.description} onOpenChange={handleOpenChange}>
+      <Collapsible defaultOpen={defaultOpen} open={open} disabled={!item.description} onOpenChange={handleOpenChange}>
         <CollapsibleTrigger
           className={cn(
             "group block w-full text-left",
@@ -93,8 +92,8 @@ export function EducationItem({ item }: { item: Education }) {
 
         <CollapsibleContent className="overflow-hidden">
           {item.description && (
-            <div className="typeset typeset-description pt-3 pb-1 pl-9">
-              <Markdown>{item.description}</Markdown>
+            <div className="pt-3 pb-1 pl-9 text-sm">
+              {item.description}
             </div>
           )}
         </CollapsibleContent>

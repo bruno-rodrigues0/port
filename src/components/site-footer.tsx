@@ -23,17 +23,17 @@ export function SiteFooter() {
         <Separator className="absolute left-0" />
 
         <div className="flex max-sm:flex-col">
-          <div className="flex flex-col flex-1 p-4 gap-2 justify-center max-sm:border-b border-r border-muted">
+          <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-b border-r border-muted">
             <span className="text-xs text-ring font-mono ">CREATED BY</span>
             <p><Link href="https://github.com/bruno-rodrigues0" className="underline">@bruno-rodrigues0</Link></p>
           </div>
 
-          <div className="flex flex-col flex-1 p-4 gap-2 justify-center max-sm:border-b border-r border-muted">
+          <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-b border-r border-muted">
             <span className="text-xs text-ring font-mono ">DATE</span>
             <p>{date}</p>
           </div>
 
-          <div className="flex flex-col flex-1 p-4 gap-2 justify-center max-sm:border-b border-r border-muted">
+          <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-b border-r border-muted">
             <span className="text-xs text-ring font-mono ">DEPLOYED ON</span>
             <p>
               <svg viewBox="0 0 24 24" aria-hidden width={18} >
@@ -42,13 +42,11 @@ export function SiteFooter() {
             </p>
           </div>
 
-          <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-muted">
+          <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-b border-muted">
             <span className="text-xs text-ring font-mono ">SOURCE CODE</span>
             <p><Link href="https://github.com/bruno-rodrigues0/port" className="underline">Github</Link> </p>
           </div>
         </div>
-
-        <Separator className="absolute left-0" />
 
         <div className="flex flex-col">
           <div className="flex flex-1 p-4 pb-0 gap-2  border-muted">
