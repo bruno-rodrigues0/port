@@ -2,8 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Caveat} from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import { OpenPanelComponent } from "@openpanel/nextjs";
- 
+import { Analytics } from "@vercel/analytics/next"
+
 const handwrite = Caveat({
   weight: "400",
   style: "normal",
@@ -38,17 +38,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
         <body className="min-h-full flex flex-col" suppressHydrationWarning>
+          <Analytics />
           <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
           >
-            <OpenPanelComponent 
-              clientId={process.env.CLIENT_ID!}
-              trackScreenViews={true}
-              trackOutgoingLinks={true}
-            />
             {children}
           </ThemeProvider>
         </body>
