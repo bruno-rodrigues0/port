@@ -8,14 +8,14 @@ import { TextFlip } from "../text-flip";
 export default function ProfileHeader() {
   return (
     <section id="profile-header" className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
-      <div className=" w-full h-87 max-sm:h-52 col-span-2 p-2 sm:col-span-1 sm:col-start-2 sm:p-4 z-20">
-        <figure className="absolute w-144 max-sm:w-full max-sm:max-w-80 h-80 max-sm:h-30 top-15 left-[54%] max-sm:left-1/2 -translate-x-1/2 col-span-2 p-2 z-20 flex items-center justify-center">
-          {/* <div className="max-sm:hidden"> */}
-          {/*     <div className="absolute rotate-30 border-t border-secondary w-200 top-[51px] -left-6.5 -z-10"></div> */}
-          {/*     <div className="absolute rotate-30 border-t border-secondary w-[105%] top-54 -left-95.5 -z-10"></div> */}
-          {/*     <div className="absolute -rotate-30 border-t border-secondary w-[105%] top-54 left-44 -z-10"></div> */}
-          {/* </div> */}
-          <div className="w-full h-full max-sm:max-h-25">
+      <div className=" w-full h-87 max-sm:h-52 col-span-2 p-2 sm:col-span-1 sm:col-start-2 sm:p-4">
+        <figure className="absolute w-xl max-sm:w-full max-sm:max-w-80 h-80 max-sm:h-30 top-15 left-[54%] max-sm:left-1/2 -translate-x-1/2 col-span-2 p-2 z-20 flex items-center justify-center">
+          <div className="max-sm:hidden">
+              <div className="absolute rotate-30 border-t border-secondary w-250 top-40 right-44 -z-10"></div>
+              <div className="absolute rotate-30 border-t border-secondary w-250 top-40 -right-55.5 -z-10"></div>
+              <div className="absolute -rotate-30 border-t border-secondary w-200 top-35 left-33 -z-10"></div>
+          </div>
+          <div className="w-full h-full max-sm:max-h-25 z-20">
             <SpotlightLogo/>
           </div>
           <figcaption className="pointer-events-none absolute right-0 bottom-0 text-sm leading-none tracking-wide text-zinc-500 tabular-nums select-none max-sm:hidden">Fig. 1.</figcaption>
@@ -35,10 +35,10 @@ export default function ProfileHeader() {
         </div>
       </div>
 
-      <div className="flex flex-col relative">
+      <div className="flex flex-col relative z-20">
         <div className="z-1 mt-auto border-t border-line">
           <div className="flex items-center gap-2 pl-4">
-            <h1 className="-translate-y-px text-[2rem]/none tracking-tight font-extrabold">
+            <h1 className="-translate-y-px text-[2rem]/none tracking-tight font-extrabold z-100">
               Bruno Silva
             </h1>
 

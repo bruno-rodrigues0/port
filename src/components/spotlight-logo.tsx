@@ -105,8 +105,8 @@ export function SpotlightLogo() {
           id={ids.facePattern}
           x="0"
           y="0"
-          width="8"
-          height="9"
+          width="1"
+          height="1"
           patternUnits="userSpaceOnUse"
         >
           <path
