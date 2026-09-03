@@ -180,6 +180,7 @@ export function SpotlightLogo() {
         </motion.radialGradient>
       </defs>
 
+      <use href={`#${ids.stroke}`} fill="var(--background)" fillRule="evenodd" clipRule="evenodd" />
       <use href={`#${ids.stroke}`} stroke="var(--stroke)" />
       <use href={`#${ids.stroke}`} stroke={`url(#${ids.radialGradient})`} />
 
