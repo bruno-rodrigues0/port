@@ -27,14 +27,14 @@ export default function AboutMe(){
   const [greating] = useState<string | null>(getGreating())
 
   return (
-    <section id="about" className="border-x border-line w-full pt-8 p-4 space-y-3">
+    <section id="about" className="border-x border-line w-full pt-8 p-4">
       <div>
         <h2 className="font-handwrite text-3xl font-bold text-balance">{greating}!</h2>
       </div>
 
       <Separator className="absolute left-0"/>
 
-      <div className="pt-4">
+      <div className="py-4">
         <ul className="list-disc marker:text-zinc-700  marker:text-lg space-y-3 list-inside">
           {OVERVIEW_CONTENT.map((phrase, index) => {
             if ((index > 2 && showMore) || index <= 2) {
