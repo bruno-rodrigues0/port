@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Caveat} from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { OpenPanelComponent } from "@openpanel/nextjs";
  
 const handwrite = Caveat({
   weight: "400",
@@ -43,6 +44,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           enableSystem
           disableTransitionOnChange
           >
+            <OpenPanelComponent 
+              clientId={process.env.CLIENT_ID!}
+              trackScreenViews={true}
+              trackOutgoingLinks={true}
+            />
             {children}
           </ThemeProvider>
         </body>
