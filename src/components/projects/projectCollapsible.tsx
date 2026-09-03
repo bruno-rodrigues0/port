@@ -57,7 +57,7 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
         <CollapsibleContent>
           <div className="py-2">
             <Separator className="absolute left-0"/>
-            <div className="pt-4 space-y-4">
+            <div className="pt-4 space-y-4 text-sm">
               <p>{project.description}</p>
               <span className="flex gap-2 flex-wrap">{project.labels}</span>
             </div>
