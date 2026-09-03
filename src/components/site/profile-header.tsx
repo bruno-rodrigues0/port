@@ -9,7 +9,7 @@ export default function ProfileHeader() {
   return (
     <section id="profile-header" className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
       <div className=" w-full h-87 max-sm:h-52 col-span-2 p-2 sm:col-span-1 sm:col-start-2 sm:p-4 z-20">
-        <figure className="absolute w-130 max-sm:w-full max-sm:max-w-80 h-80 max-sm:h-30 top-15 left-[55%] max-sm:left-1/2 -translate-x-1/2 col-span-2 p-2 z-20 flex items-center justify-center">
+        <figure className="absolute w-144 max-sm:w-full max-sm:max-w-80 h-80 max-sm:h-30 top-15 left-[54%] max-sm:left-1/2 -translate-x-1/2 col-span-2 p-2 z-20 flex items-center justify-center">
           {/* <div className="max-sm:hidden"> */}
           {/*     <div className="absolute rotate-30 border-t border-secondary w-200 top-[51px] -left-6.5 -z-10"></div> */}
           {/*     <div className="absolute rotate-30 border-t border-secondary w-[105%] top-54 -left-95.5 -z-10"></div> */}
