@@ -2,6 +2,7 @@ import React from "react";
 import { Badge } from "../ui/badge";
 import { Separator } from "../ui/separator";
 import { BACKEND, FRONTEND, LANGUAGES, OTHERS, TOOLS } from "@/constants";
+import Link from "next/link";
 
 const AREAS = [
   {
@@ -40,7 +41,9 @@ export default function Stack() {
             <div key={index}>
               <StackItem key={area.key} num={`0${index}`} label={area.key}>
                 {area.value.map(item => (
-                  <Badge key={item.key} variant="outline" className="bg-primary-foreground">{item.icon}{item.title}</Badge>
+                  <Link href={item.url} key={item.key} target="_blank">
+                    <Badge variant="outline" className="bg-primary-foreground">{item.icon}{item.title}</Badge>
+                  </Link>
                 ))}
               </StackItem>
               <Separator className="absolute left-0 sm:hidden" />
