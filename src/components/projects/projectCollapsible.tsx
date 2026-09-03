@@ -31,27 +31,27 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
             </div>
           </div>
 
-          <div className="w-full flex flex-col justify-start h-auto px-4">
-            <p>{project.title}</p>
-            <span className="text-sm text-muted-foreground">{project.meta}</span>
-          </div>
+          <CollapsibleTrigger className="flex w-full ml-2 pr-2 items-center rounded-md transition-all ease-in-out hover:bg-primary-foreground">
+            <div className="w-full flex flex-col justify-start h-auto px-4">
+              <p className="text-start">{project.title}</p>
+              <span className="text-sm text-muted-foreground">{project.meta}</span>
+            </div>
 
-          <div className="flex-1 flex justify-end items-center gap-2">
-            <HoverCard>
-              <HoverCardTrigger delay={.1} href={project.url}>
-                <LinkIcon className="w-5.5 h-5.5 p-1"/>
-              </HoverCardTrigger>
-              <HoverCardContent className="w-fit">
-                <span>Go to project</span>
-              </HoverCardContent>
-            </HoverCard>
+            <div className="flex-1 flex justify-end items-center gap-2">
+              <HoverCard>
+                <HoverCardTrigger delay={.1} href={project.url}>
+                  <LinkIcon className="w-5.5 h-5.5 p-1"/>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-fit">
+                  <span>Go to project</span>
+                </HoverCardContent>
+              </HoverCard>
 
-            <CollapsibleTrigger>
               <div className="text-muted-foreground [&_svg]:h-lh [&_svg]:w-4">
                 <ChevronsUpDownIcon ref={chevronsRef} className="tecursor-pointer"/>
               </div>
-            </CollapsibleTrigger>
-          </div>
+            </div>
+          </CollapsibleTrigger>
         </div>
 
         <CollapsibleContent>

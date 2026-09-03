@@ -32,14 +32,14 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
       <Collapsible defaultOpen={defaultOpen} open={open} disabled={!item.description} onOpenChange={handleOpenChange}>
         <CollapsibleTrigger
           className={cn(
-            "group block w-full text-left",
-            "relative before:absolute before:-top-1 before:-right-1 before:-bottom-1.5 before:left-7 before:-z-1 before:rounded-lg before:transition-[background-color] before:ease-out hover:before:bg-accent-muted",
+            "block w-full text-left",
+            "relative before:absolute before:-top-1 before:-right-1 before:-bottom-1.5 before:left-7 before:-z-1 before:rounded-lg before:transition-[background-color] before:ease-out hover:before:bg-primary-foreground",
             "outline-none focus-visible:before:inset-ring-2 focus-visible:before:inset-ring-ring/50",
             "data-disabled:before:content-none"
           )}
         >
           <div className="relative z-1 mb-1 flex items-start gap-3 text-base">
-            <div className="bg-primary-foreground border border-muted rounded-md w-8 h-8 p-2 flex items-center justify-center">
+            <div className="bg-primary-foreground border border-muted rounded-md [&_svg]:h-4 [&_svg]:w-4 p-1 flex items-center justify-center">
               <GraduationCapIcon />
             </div>
 
