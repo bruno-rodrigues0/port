@@ -1,10 +1,10 @@
 "use client"
 
 import Link from "next/link";
-import { Separator } from "./ui/separator";
+import { Separator } from "../ui/separator";
 import { useState } from "react";
-import { cn } from "../lib/utils";
-import { BSMark } from "./bs-mark";
+import { cn } from "@/lib/utils";
+import { BSMark } from "../bs-mark";
 
 const INSPIRE_BY = ["Tailwind CSS", "shadcn/ui", "Vercel", "chanhdai.com"]
 

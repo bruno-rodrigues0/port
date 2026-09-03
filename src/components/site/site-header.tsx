@@ -1,9 +1,9 @@
-import { NavigationMenu, NavigationMenuLink, NavigationMenuList, NavigationMenuItem} from "./ui/navigation-menu";
-import { BSMark } from "./bs-mark";
-import { Separator } from "./ui/separator";
-import { ThemeSwitcher } from "./theme-switcher";
+import { NavigationMenu, NavigationMenuLink, NavigationMenuList, NavigationMenuItem} from "../ui/navigation-menu";
+import { BSMark } from "../bs-mark";
+import { Separator } from "../ui/separator";
+import { ThemeSwitcher } from "../theme-switcher";
 import { ReactNode } from "react";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
 
 export default function SiteHeader(){
   return (

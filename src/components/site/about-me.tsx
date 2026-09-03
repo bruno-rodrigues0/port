@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Separator } from "./ui/separator"
+import { Separator } from "../ui/separator"
 
 export default function AboutMe(){
   const time = Number(new Date().toLocaleTimeString("pt-BR", {

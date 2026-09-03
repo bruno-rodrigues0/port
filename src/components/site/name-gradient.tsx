@@ -1,5 +1,5 @@
 import { Separator } from "@base-ui/react";
-import { FluidGradientText } from "./fluid-gradient-text";
+import { FluidGradientText } from "../fluid-gradient-text";
 
 export function NameGradient() {
   return(

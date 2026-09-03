@@ -1,5 +1,5 @@
 import { PROJECTS } from "@/constants";
-import { Separator } from "./ui/separator";
+import { Separator } from "../ui/separator";
 import ProjectCollapsible from "./projectCollapsible";
 
 export default function Projects() {
