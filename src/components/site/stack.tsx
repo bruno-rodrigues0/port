@@ -3,6 +3,7 @@ import { Badge } from "../ui/badge";
 import { Separator } from "../ui/separator";
 import { BACKEND, FRONTEND, LANGUAGES, OTHERS, TOOLS } from "@/constants";
 import Link from "next/link";
+import { cn } from "../../lib/utils";
 
 const AREAS = [
   {
@@ -27,6 +28,13 @@ const AREAS = [
   },
 ]
   
+type StackItemProps = {
+  num: string,
+  label: string,
+  className?: string,
+  children: React.ReactNode, 
+  props?: React.ComponentProps<"li">
+}
 
 export default function Stack() {
   return(
@@ -38,7 +46,7 @@ export default function Stack() {
         <ul className="space-y-5">
 
           {AREAS.map((area, index) => (
-            <div key={index}>
+            <div key={index} className="space-y-3">
               <StackItem key={area.key} num={`0${index}`} label={area.key}>
                 {area.value.map(item => (
                   <Link href={item.url} key={item.key} target="_blank">
@@ -55,9 +63,13 @@ export default function Stack() {
   )
 }
 
-export function StackItem({num, label, children}: {num: string, label: string, children: React.ReactNode}) {
+
+export function StackItem({num, label, className, children, ...props}: StackItemProps) {
   return (
-    <li className="grid grid-cols-6 font-mono max-sm:block max-sm:space-y-2">
+    <li className={cn(
+      "grid grid-cols-6 font-mono max-sm:block max-sm:space-y-2",
+      className
+    )} {...props}>
       <div className="col-span-2 text-[.9rem]">
         <span className="text-ring">{num}. </span>
         <span>{label}</span>
