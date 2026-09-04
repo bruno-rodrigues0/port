@@ -28,6 +28,23 @@ export const metadata: Metadata = {
   authors: {name: "Bruno Rodrigues e Silva", url: "https://port-amber-ten.vercel.com"},
   category: "portifolio",
   keywords: ["nextjs", "portifolio", "shadcnui", "pixel-perfect"],
+
+  openGraph: {
+    title: "Bruno Silva - Web Developer",
+    description: "A pixel-perfect portifolio inspired by chanhdai.com",
+    url: "https://brunofzn.vercel.app",
+    siteName: "brunofzn",
+    images: [
+      {
+        url: "https://avatars.githubusercontent.com/u/119943937?v=4",
+        width: 1200,
+        height: 630,
+        alt: "Photo of Bruno Silva"
+      }
+    ],
+    locale: "pt_BR",
+    type: "website",
+  }
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
