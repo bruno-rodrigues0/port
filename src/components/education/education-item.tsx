@@ -1,10 +1,11 @@
 "use client"
-import { useRef, useState } from "react"
+
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible"
-import { cn } from "../../lib/utils"
-import { GraduationCapIcon, Infinity } from "lucide-react"
 import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "../chevrons-up-down-icon"
+import { GraduationCapIcon, Infinity } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
 import { Separator } from "../ui/separator"
+import { cn } from "../../lib/utils"
 import { Education } from "@/types"
 import { Badge } from "../ui/badge"
 
@@ -21,6 +22,10 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
       chevronsRef.current?.startAnimation()
     }
   }
+
+  useEffect(() => {
+    if (defaultOpen) chevronsRef.current?.startAnimation()
+  }, [])
 
   return (
     <div className="group/education-item relative before:absolute before:left-3 before:h-full before:w-px before:bg-muted mb-4 mt-4">

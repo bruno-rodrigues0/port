@@ -5,7 +5,7 @@ import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "../chevrons-up-dow
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card"
 import { Infinity, Link as LinkIcon } from "lucide-react"
 import { Separator } from "../ui/separator"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Project } from "@/types"
 import { Badge } from "../ui/badge"
 
@@ -13,6 +13,10 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
   const [open, setOpen] = useState(defaultOpen)
   const chevronsRef = useRef<ChevronsUpDownIconHandle>(null)
   const {start, end} = project.period
+
+  useEffect(() => {
+    if (defaultOpen) chevronsRef.current?.startAnimation()
+  }, [])
 
   const handleOpen = () => {
     setOpen(prev => !prev)
