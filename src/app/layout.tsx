@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   title: "Bruno Silva - Web Developer",
   description: "A pixel-perfect portifolio inspired by chanhdai.com",
   creator: "Bruno Rodrigues e Silva",
-  authors: {name: "Bruno Rodrigues e Silva", url: "https://port-amber-ten.vercel.com"},
+  authors: {name: "Bruno Rodrigues e Silva", url: "https://brunofzn.vercel.app"},
   category: "portifolio",
   keywords: ["nextjs", "portifolio", "shadcnui", "pixel-perfect"],
 
