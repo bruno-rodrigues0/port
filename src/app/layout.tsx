@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Caveat} from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/next"
+import { AUTHOR, LINKS, OPENGRAPH_IMAGE, SITE_NAME, SITE_URL } from "../lib/site-config";
+import { URL } from "url";
 
 const handwrite = Caveat({
   weight: "400",
@@ -21,28 +23,93 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#bruno`,
+      name: "Bruno Silva",
+      alternateName: "bruno-rodrigues0",
+      jobTitle: "Web Developer",
+      url: SITE_URL,
+      image: new URL(OPENGRAPH_IMAGE, SITE_URL).toString(),
+      email: "brunorodriguesmtv0@gmail.com",
+      knowsLanguage: ["English", "Portuguese"],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Recife",
+        addressRegion: "PE",
+        addressCountry: "BR",
+      },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "CIn - UFPE",
+      },
+      sameAs: [
+        LINKS.githubProfile,
+        LINKS.linkedIn,
+        LINKS.whatsapp,
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      inLanguage: "en",
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${SITE_URL}/#profile`,
+      url: SITE_URL,
+      inLanguage: "en",
+      mainEntity: { "@id": `${SITE_URL}/#bruno` },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: "Bruno Silva - Web Developer",
-  description: "A pixel-perfect portifolio inspired by chanhdai.com",
-  creator: "Bruno Rodrigues e Silva",
-  authors: {name: "Bruno Rodrigues e Silva", url: "https://brunofzn.vercel.app"},
+  title: SITE_NAME,
+  description: "Hi, I'm Bruno, a early-career software developer with approximately three years of focused study and hands-on practice in web development, currently working primarily with TypeScript and the modern JavaScript ecosystem.",
+  creator: AUTHOR,
+  authors: {name: AUTHOR, url: SITE_URL},
   category: "portifolio",
-  keywords: ["nextjs", "portifolio", "shadcnui", "pixel-perfect"],
+  keywords: [
+    "next.js developer", "portfolio", "shadcnui",
+    "pixel-perfect", "web developer",
+    "recife", "typescript developer", "backend developer",
+    "frontend developer", "full stack",
+  ],
+
+  metadataBase:  new URL(SITE_URL),
+  applicationName: SITE_NAME,
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+    }
+  },
 
   openGraph: {
-    title: "Bruno Silva - Web Developer",
-    description: "A pixel-perfect portifolio inspired by chanhdai.com",
-    url: "https://brunofzn.vercel.app",
-    siteName: "brunofzn",
+    title: SITE_NAME,
+    description: "A pixel-perfect portfolio inspired by chanhdai.com",
+    url: SITE_URL,
+    siteName: SITE_NAME,
     images: [
       {
-        url: "https://avatars.githubusercontent.com/u/119943937?v=4",
+        url: OPENGRAPH_IMAGE,
         width: 1200,
         height: 630,
         alt: "Photo of Bruno Silva"
       }
     ],
-    locale: "pt_BR",
+    locale: "en",
     type: "website",
   }
 };
@@ -55,6 +122,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
         <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+            }}
+          />
           <Analytics />
           <ThemeProvider
           attribute="class"

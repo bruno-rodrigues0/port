@@ -1,21 +1,22 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { GithubIcon, LinkedInIcon, WhatsappIcon } from "../icons";
+import { LINKS } from "../../lib/site-config";
 
 
 export default function SocialLinks(){
   return (
     <section className="border-x p-2 flex" id="social-links">
       <ul className="flex gap-2 p-2">
-        <SocialLink href="https://github.com/bruno-rodrigues0">
+        <SocialLink href={LINKS.githubProfile}>
           <GithubIcon className="w-5 h-5"/>
         </SocialLink>
 
-        <SocialLink href="https://www.linkedin.com/in/bruno-rodrigues0">
+        <SocialLink href={LINKS.linkedIn}>
           <LinkedInIcon className="w-5 h-5"/>
         </SocialLink>
 
-        <SocialLink href="https://wa.me/553897375691">
+        <SocialLink href={LINKS.whatsapp} >
           <WhatsappIcon className="w-5 h-5"/>
         </SocialLink>
       </ul>

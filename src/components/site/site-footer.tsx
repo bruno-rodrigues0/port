@@ -5,6 +5,7 @@ import { Separator } from "../ui/separator";
 import { useState } from "react";
 import { BSMark } from "../bs-mark";
 import { GithubIcon, LinkedInIconSolid, VercelIcon, WhatsappIcon } from "../icons";
+import { LINKS, SITE_URL } from "../../lib/site-config";
 
 const INSPIRE_BY = ["Tailwind CSS", "shadcn/ui", "Vercel", "chanhdai.com"]
 
@@ -16,7 +17,7 @@ export function SiteFooter() {
     <>
       <footer className="border-x border-line pt-8 max-w-180 mx-auto text-sm" id="credits">
         <div className="flex justify-between px-4 py-2 flex-wrap items-center">
-          <p><Link href="https://port-amber-ten.vercel.app" className="underline text-primary">brunofzn.dev</Link></p>
+          <p><Link href={SITE_URL} className="underline text-primary">brunofzn.vercel.app</Link></p>
           <p className="text-ring text-xs"> A pixel-perfect portifolio inspired by chanhdai.com</p>
         </div>
 
@@ -25,7 +26,7 @@ export function SiteFooter() {
         <div className="flex max-sm:flex-col">
           <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-b border-r border-muted">
             <span className="text-xs text-ring font-mono ">CREATED BY</span>
-            <p><Link href="https://github.com/bruno-rodrigues0" className="underline" target="_blank">@bruno-rodrigues0</Link></p>
+            <p><Link href={LINKS.githubProfile} className="underline" target="_blank">@bruno-rodrigues0</Link></p>
           </div>
 
           <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-b border-r border-muted">
@@ -44,7 +45,7 @@ export function SiteFooter() {
 
           <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-b border-muted">
             <span className="text-xs text-ring font-mono ">SOURCE CODE</span>
-            <p><Link href="https://github.com/bruno-rodrigues0/port" className="underline" target="_blank">Github</Link> </p>
+            <p><Link href={LINKS.sourceCode} className="underline" target="_blank">Github</Link> </p>
           </div>
         </div>
 
@@ -67,19 +68,19 @@ export function SiteFooter() {
         <div className="flex px-4 py-1 justify-between">
           <BSMark className="w-7"/>
           <ul className="flex gap-2 p-2 items-center">
-            <Link href="https://github.com/bruno-rodrigues0" target="_blank">
+            <Link href={LINKS.githubProfile} target="_blank">
               <GithubIcon className="size-4"/>
             </Link>
 
             <Separator orientation="vertical"/>
             
-            <Link href="https://www.linkedin.com/in/bruno-rodrigues0" target="_blank">
+            <Link href={LINKS.linkedIn} target="_blank">
               <LinkedInIconSolid className="size-4"/>
             </Link>
 
             <Separator orientation="vertical"/>
             
-            <Link href="https://wa.me/553897375691" target="_blank">
+            <Link href={LINKS.whatsapp} target="_blank">
               <WhatsappIcon className="size-4"/>
             </Link>
           </ul>
