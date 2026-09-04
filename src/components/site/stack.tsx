@@ -46,7 +46,6 @@ export default function Stack() {
         <ul className="space-y-5">
 
           {AREAS.map((area, index) => (
-            <div key={index} className="space-y-3">
               <StackItem key={area.key} num={`0${index}`} label={area.key}>
                 {area.value.map(item => (
                   <Link href={item.url} key={item.key} target="_blank">
@@ -54,8 +53,6 @@ export default function Stack() {
                   </Link>
                 ))}
               </StackItem>
-              <Separator className="absolute left-0 sm:hidden" />
-            </div>
           ))}
         </ul>
       </div>

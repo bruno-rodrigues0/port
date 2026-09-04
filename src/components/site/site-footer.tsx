@@ -36,7 +36,7 @@ export function SiteFooter() {
 
           <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-b border-r border-muted">
             <span className="text-xs text-ring font-mono ">DEPLOYED ON</span>
-            <Link href="https://vercel.com" target="_blank">
+            <Link href="https://vercel.com" target="_blank" aria-label="Vercel">
               <p>
                 <VercelIcon className="size-4"/>
               </p>
@@ -67,22 +67,24 @@ export function SiteFooter() {
 
         <div className="flex px-4 py-1 justify-between">
           <BSMark className="w-7"/>
-          <ul className="flex gap-2 p-2 items-center">
-            <Link href={LINKS.githubProfile} target="_blank">
-              <GithubIcon className="size-4"/>
-            </Link>
+          <ul className="flex gap-3 p-2 items-center">
+            <li>
+              <Link href={LINKS.githubProfile} target="_blank" aria-label="Github">
+                <GithubIcon className="size-4"/>
+              </Link>
+            </li>
 
-            <Separator orientation="vertical"/>
-            
-            <Link href={LINKS.linkedIn} target="_blank">
-              <LinkedInIconSolid className="size-4"/>
-            </Link>
+            <li>
+              <Link href={LINKS.linkedIn} target="_blank" aria-label="LinkedIn">
+                <LinkedInIconSolid className="size-4"/>
+              </Link>
+            </li>
 
-            <Separator orientation="vertical"/>
-            
-            <Link href={LINKS.whatsapp} target="_blank">
-              <WhatsappIcon className="size-4"/>
-            </Link>
+            <li>
+              <Link href={LINKS.whatsapp} target="_blank" aria-label="Whatsapp">
+                <WhatsappIcon className="size-4"/>
+              </Link>
+            </li>
           </ul>
         </div>
 

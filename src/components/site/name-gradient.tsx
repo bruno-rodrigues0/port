@@ -3,7 +3,7 @@ import { FluidGradientText } from "../fluid-gradient-text";
 
 export function NameGradient() {
   return(
-    <section className="w-full">
+    <section className="w-full" aria-hidden>
       <FluidGradientText text="brunofzn"/>
       <Separator />
       <div className="w-full h-25 max-sm:hidden"/>

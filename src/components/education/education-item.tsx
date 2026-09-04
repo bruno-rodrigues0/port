@@ -38,6 +38,8 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
 
       <Collapsible defaultOpen={defaultOpen} open={open} disabled={!item.description} onOpenChange={handleOpenChange}>
         <CollapsibleTrigger
+          render={<div />}
+          nativeButton={false}
           className={cn(
             "block w-full text-left",
             "relative before:absolute before:-top-1 before:-right-1 before:-bottom-1.5 before:left-7 before:-z-1 before:rounded-lg before:transition-[background-color] before:ease-out hover:before:bg-primary-foreground",

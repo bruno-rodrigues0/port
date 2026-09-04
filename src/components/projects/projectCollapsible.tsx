@@ -28,7 +28,7 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
   }
 
   return (
-    <>
+    <li>
       <Collapsible className="py-4 transition-all" defaultOpen={defaultOpen} open={open} onOpenChange={handleOpen}>
         <div className="flex max-w-full items-center">
           <div className="flex-1 flex justify-start">
@@ -37,7 +37,11 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
             </div>
           </div>
 
-          <CollapsibleTrigger className="flex w-full ml-2 pr-2 items-center rounded-md transition-all ease-in-out hover:bg-primary-foreground">
+          <CollapsibleTrigger
+            render={<div />}
+            nativeButton={false}
+            className="flex w-full mx-2 pr-2 items-center rounded-md transition-all ease-in-out hover:bg-primary-foreground"
+          >
             <dl>
               <div className="w-full flex flex-col justify-start h-auto px-4">
                 <dt className="sr-only">Project Title</dt>
@@ -46,18 +50,17 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
                 </dd>
                 <dt className="sr-only">Project period</dt>
                 <dd>
-                  <span className="text-sm text-muted-foreground">
-                    <p className="flex items-center gap-1">
-                      {start} - {end ? end : <Infinity width={18}/>}
-                    </p>
-                  </span>
+                  <p className="flex items-center gap-1 text-sm text-muted-foreground">
+                    {start} - {end ? end : <Infinity width={18}/>}
+                  </p>
                 </dd>
               </div>
             </dl>
 
+          </CollapsibleTrigger>
             <div className="flex-1 flex justify-end items-center gap-2">
               <HoverCard>
-                <HoverCardTrigger delay={.1} href={project.url}>
+                <HoverCardTrigger delay={.1} href={project.url} target="_blank">
                   <LinkIcon className="w-5.5 h-5.5 p-1"/>
                 </HoverCardTrigger>
                 <HoverCardContent className="w-fit">
@@ -66,10 +69,9 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
               </HoverCard>
 
               <div className="text-muted-foreground [&_svg]:h-lh [&_svg]:w-4">
-                <ChevronsUpDownIcon ref={chevronsRef} className="tecursor-pointer"/>
+                <ChevronsUpDownIcon ref={chevronsRef} className="cursor-pointer"/>
               </div>
             </div>
-          </CollapsibleTrigger>
         </div>
 
         <CollapsibleContent>
@@ -89,6 +91,6 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
         </CollapsibleContent>
       </Collapsible>
       <Separator className="absolute left-0"/>
-    </>
+    </li>
   )
 }

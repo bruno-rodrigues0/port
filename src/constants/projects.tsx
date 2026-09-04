@@ -53,7 +53,7 @@ export const PROJECTS: Project[] = [
   {
     key: "apple_website",
     title: "Apple Website",
-    url: "",
+    url: "/",
     labels: ["Next.js", "Typescript", "gsap", "shadcn/ui", "next-video"],
     logo: <CodeXml className="w-5"/>,
     period: {
@@ -76,7 +76,7 @@ export const PROJECTS: Project[] = [
   {
     key: "concord",
     title: "Concord",
-    url: "",
+    url: "/",
     labels: ["Next.js", "Typescript", "shadcn/ui", "Fastify", "Swagger", "zod",  "better-auth", "Postgresql", "Prisma", "nginx", "Docker", "Websocket"],
     logo: <CodeXml className="w-5"/>,
     period: {

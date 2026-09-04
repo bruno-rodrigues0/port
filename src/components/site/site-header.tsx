@@ -4,15 +4,16 @@ import { Separator } from "../ui/separator";
 import { ThemeSwitcher } from "../theme-switcher";
 import { ReactNode } from "react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
+import Link from "next/link";
 
 export default function SiteHeader(){
   return (
     <>
     <header className="sticky top-0 z-50 h-auto py-2 items-center bg-background">
       <div className="flex justify-between max-w-180 mx-auto px-2">
-        <a href="#" className="content-center">
+        <Link href="/" className="content-center" aria-label="Logo">
           <BSMark/>
-        </a>
+        </Link>
 
         <div className="flex gap-2 items-center">
           <NavigationMenu className="max-sm:hidden">
