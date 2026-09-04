@@ -1,6 +1,6 @@
 "use client"
 
-import { Clock, CodeXml, LucideProps, Mail, MapPin, Mars} from "lucide-react";
+import { Clock, CodeXml, Link, LucideProps, Mail, MapPin, Mars, Phone} from "lucide-react";
 import { ReactNode, useEffect, useState } from "react";
 
 const localeOpts: Intl.DateTimeFormatOptions = {timeZone: 'America/Sao_Paulo', hour: 'numeric', minute: 'numeric'}
@@ -18,23 +18,36 @@ export default function Overview(){
   })
 
   return (
-    <section className="border-x border-line pt-12 p-4 grid grid-cols-2 max-sm:grid-cols-1 gap-4">
+    <section className="border-x border-line pt-12 p-4 ">
+      <dl className="grid grid-cols-2 max-sm:grid-cols-1 gap-4">
         <div>
           <ul className="flex flex-col gap-4 font-sans">
-            <OverviewItem text="Cumputer Scientist: CIn - UFPE"><CodeXml size={15}/></OverviewItem>
-            <OverviewItem text="Recife - PE, Brazil"><MapPin size={15}/></OverviewItem>
-            <OverviewItem text="brunorodriguesmtv0@gmail.com"><Mail size={15}/></OverviewItem>
+              <dt className="sr-only">Role</dt>
+              <dd><OverviewItem text="Cumputer Scientist: CIn - UFPE"><CodeXml size={15}/></OverviewItem></dd>
+              <dt className="sr-only">Location</dt>
+              <dd><OverviewItem text="Recife - PE, Brazil"><MapPin size={15}/></OverviewItem></dd>
+              <dt className="sr-only">Email</dt>
+              <dd><OverviewItem text="brunorodriguesmtv0@gmail.com"><Mail size={15}/></OverviewItem></dd>
+              <dt className="sr-only">Cellphone number</dt>
+              <dd><OverviewItem text="+55 38 99737 5691"><Phone size={15}/></OverviewItem></dd>
+              <dt className="sr-only">Site</dt>
+              <dd><OverviewItem text="brunofzn.dev"><Link size={15}/></OverviewItem></dd>
           </ul>
         </div>
 
         <div className="flex items-end">
           <ul className="flex flex-col gap-4 font-mono">
-            <OverviewItem text={(
-              <>{time} <span className="text-muted-foreground">(GMT-03)</span></>
-            )}><Clock size={15}/></OverviewItem>
-            <OverviewItem text="he/him"><Mars size={15}/></OverviewItem>
+            <dt className="sr-only">Time</dt>
+            <dd>
+              <OverviewItem text={(
+                <>{time} <span className="text-muted-foreground">(GMT-03)</span></>
+              )}><Clock size={15}/></OverviewItem>
+            </dd>
+            <dt className="sr-only">Gender / Pronoums</dt>
+            <dd><OverviewItem text="he/him"><Mars size={15}/></OverviewItem></dd>
           </ul>
         </div>
+      </dl>
     </section>
   )
 }
@@ -47,7 +60,7 @@ export function OverviewItem({children, text}: {children: ReactNode, text:string
 
 export function IconBox({children}: LucideProps){
   return (
-    <div className="border border-line rounded-md bg-primary-foreground p-1 w-fit flex justify-center items-center">
+    <div className="border rounded-sm bg-primary-foreground p-1 w-fit flex justify-center items-center">
       {children}
     </div>
   )

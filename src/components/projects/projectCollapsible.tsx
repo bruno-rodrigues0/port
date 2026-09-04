@@ -38,14 +38,22 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
           </div>
 
           <CollapsibleTrigger className="flex w-full ml-2 pr-2 items-center rounded-md transition-all ease-in-out hover:bg-primary-foreground">
-            <div className="w-full flex flex-col justify-start h-auto px-4">
-              <p className="text-start">{project.title}</p>
-              <span className="text-sm text-muted-foreground">
-                <p className="flex items-center gap-1">
-                  {start} - {end ? end : <Infinity width={18}/>}
-                </p>
-              </span>
-            </div>
+            <dl>
+              <div className="w-full flex flex-col justify-start h-auto px-4">
+                <dt className="sr-only">Project Title</dt>
+                <dd>
+                  <p className="text-start">{project.title}</p>
+                </dd>
+                <dt className="sr-only">Project period</dt>
+                <dd>
+                  <span className="text-sm text-muted-foreground">
+                    <p className="flex items-center gap-1">
+                      {start} - {end ? end : <Infinity width={18}/>}
+                    </p>
+                  </span>
+                </dd>
+              </div>
+            </dl>
 
             <div className="flex-1 flex justify-end items-center gap-2">
               <HoverCard>

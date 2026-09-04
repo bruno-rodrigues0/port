@@ -38,7 +38,7 @@ type StackItemProps = {
 
 export default function Stack() {
   return(
-    <div className="border-x border-line pt-8 p-4" id="stack">
+    <section className="border-x border-line pt-8 p-4" id="stack">
       <h2 className="text-4xl font-sans font-medium text-balance">Stack</h2>
       <Separator className="absolute left-0"/>
 
@@ -59,7 +59,7 @@ export default function Stack() {
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   )
 }
 

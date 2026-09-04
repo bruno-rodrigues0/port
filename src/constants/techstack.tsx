@@ -1,4 +1,4 @@
-import { ArchIcon, AWSIcon, BunIcon, CppIcon, CiCdIcon, DockerIcon, ExpressIcon, GitIcon, GsapIcon, NextIcon, NginxIcon, NodeIcon, OpenCvIcon, OpenGLIcon, PostgresIcon, PrismaIcon, PythonIcon, ReactIcon, ShadcnIcon, TailwindIcon, TypescriptIcon, VercelIcon, ZodIcon, FastifyIcon } from "../components/icons"
+import { ArchIcon, AWSIcon, BunIcon, CppIcon, GithubIcon, DockerIcon, ExpressIcon, GitIcon, GsapIcon, NextIcon, NginxIcon, NodeIcon, OpenCvIcon, OpenGLIcon, PostgresIcon, PrismaIcon, PythonIcon, ReactIcon, ShadcnIcon, TailwindIcon, TypescriptIcon, VercelIcon, ZodIcon, FastifyIcon } from "../components/icons"
 import { TechStack } from "../types"
 
 export const LANGUAGES: TechStack[] = [
@@ -122,7 +122,7 @@ export const TOOLS: TechStack[] = [
     key: "cicd",
     title: "CI/CD",
     url: "https://github.com/solutions/use-case/ci-cd",
-    icon: <CiCdIcon />
+    icon: <GithubIcon />
   },
   {
     key: "docker",
