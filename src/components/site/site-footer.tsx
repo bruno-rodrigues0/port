@@ -11,7 +11,7 @@ const INSPIRE_BY = ["Tailwind CSS", "shadcn/ui", "Vercel", "chanhdai.com"]
 
 
 export function SiteFooter() {
-  const [date, setDate] = useState(new Date().toLocaleDateString())
+  const [date] = useState(new Date().toLocaleDateString())
 
   return (
     <>
