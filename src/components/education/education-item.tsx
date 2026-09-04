@@ -2,14 +2,16 @@
 import { useRef, useState } from "react"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible"
 import { cn } from "../../lib/utils"
-import { GraduationCapIcon } from "lucide-react"
+import { GraduationCapIcon, Infinity } from "lucide-react"
 import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "../chevrons-up-down-icon"
 import { Separator } from "../ui/separator"
 import { Education } from "@/types"
+import { Badge } from "../ui/badge"
 
 export function EducationItem({ item, defaultOpen }: { item: Education, defaultOpen: boolean}) {
   const [open, setOpen] = useState<boolean>(defaultOpen)
   const chevronsRef = useRef<ChevronsUpDownIconHandle>(null)
+  const {start, end} = item.period
 
   const handleOpenChange = () => {
     setOpen(prev => !prev)
@@ -54,7 +56,9 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
             <div>
               <dt className="sr-only">Study period</dt>
               <dd className="flex items-center gap-0.5 tabular-nums">
-                <span>{item.period}</span>
+                <p className="flex items-center gap-1">
+                  {start} - {end ? end : <Infinity width={18}/>}
+                </p>
               </dd>
             </div>
 
@@ -99,7 +103,11 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
         </CollapsibleContent>
 
         <div className="flex flex-wrap gap-1.5 pt-3 pl-9">
-          {item.labels}
+          <span className="flex gap-2 flex-wrap">
+            {item.labels?.map((label, index) => (
+              <Badge variant="outline" className="bg-primary-foreground" key={index}>{label}</Badge>
+            ))}
+          </span>
         </div>
 
       </Collapsible>

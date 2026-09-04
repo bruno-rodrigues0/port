@@ -3,14 +3,16 @@
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible"
 import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "../chevrons-up-down-icon"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card"
-import { Link as LinkIcon } from "lucide-react"
+import { Infinity, Link as LinkIcon } from "lucide-react"
 import { Separator } from "../ui/separator"
 import { useRef, useState } from "react"
 import { Project } from "@/types"
+import { Badge } from "../ui/badge"
 
 export default function ProjectCollapsible({project, defaultOpen = false}: {project: Project, defaultOpen?: boolean}) {
   const [open, setOpen] = useState(defaultOpen)
   const chevronsRef = useRef<ChevronsUpDownIconHandle>(null)
+  const {start, end} = project.period
 
   const handleOpen = () => {
     setOpen(prev => !prev)
@@ -34,7 +36,11 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
           <CollapsibleTrigger className="flex w-full ml-2 pr-2 items-center rounded-md transition-all ease-in-out hover:bg-primary-foreground">
             <div className="w-full flex flex-col justify-start h-auto px-4">
               <p className="text-start">{project.title}</p>
-              <span className="text-sm text-muted-foreground">{project.meta}</span>
+              <span className="text-sm text-muted-foreground">
+                <p className="flex items-center gap-1">
+                  {start} - {end ? end : <Infinity width={18}/>}
+                </p>
+              </span>
             </div>
 
             <div className="flex-1 flex justify-end items-center gap-2">
@@ -57,10 +63,16 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
         <CollapsibleContent>
           <div className="py-2">
             <Separator className="absolute left-0"/>
+
             <div className="pt-4 space-y-4 text-sm">
-              <p>{project.description}</p>
-              <span className="flex gap-2 flex-wrap">{project.labels}</span>
+              <div>{project.description}</div>
+              <span className="flex gap-2 flex-wrap">
+                {project.labels?.map((label, index) => (
+                  <Badge variant="outline" className="bg-primary-foreground" key={index}>{label}</Badge>
+                ))}
+              </span>
             </div>
+
           </div>
         </CollapsibleContent>
       </Collapsible>

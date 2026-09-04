@@ -1,11 +1,17 @@
 import { Education } from "@/types";
-import { Badge } from "../components/ui/badge";
-import { Infinity } from "lucide-react";
 
 export const EDUCATION: Education[] = [
   {
+    key: "ufpe",
     school: "CIn - UFPE",
     degree: "Bachelor's degree",
+    fieldOfStudy: "Computer Science",
+    labels: ["Python", "C++", "Verilog", "Software Engineering"],
+    period: {
+      start: "2026",
+      end: null,
+    },
+
     description: (<>
       <ul className="list-disc marker:text-ring list-inside">
         <li>Learned about: </li>
@@ -18,22 +24,17 @@ export const EDUCATION: Education[] = [
         </ul>
       </ul>
     </>),
-    key: "ufpe",
-    fieldOfStudy: "Computer Science",
-    logo: <></>,
-    labels: (
-      <>
-        <Badge variant="outline">Python</Badge>
-        <Badge variant="outline">C++</Badge>
-        <Badge variant="outline">Verilog</Badge>
-        <Badge variant="outline">Software Engineering</Badge>
-      </>
-    ),
-    period: <p className="flex gap-1 items-center">2026 - <Infinity width={18}/></p>
   },
   {
+    key: "ifbaiano",
     school: "Instituto Federal Baiano",
     degree: "High School",
+    labels: ["HTML", "CSS", "C", "MySQL", "Arduino", "PHP", "Python", "Django"],
+    period: {
+      start: "2022",
+      end: "2025",
+    },
+
     description: (<>
       <ul className="list-disc marker:text-ring list-inside">
         <li>Member of the largest drone team in the state of Bahia</li>
@@ -50,21 +51,6 @@ export const EDUCATION: Education[] = [
         <li>Learned the basics of databases.</li>
       </ul>
     </>),
-    key: "ifbaiano",
-    logo: <></>,
-    labels: (
-      <>
-        <Badge variant="outline">HTML</Badge>
-        <Badge variant="outline">CSS</Badge>
-        <Badge variant="outline">C</Badge>
-        <Badge variant="outline">MySQL</Badge>
-        <Badge variant="outline">Arduino</Badge>
-        <Badge variant="outline">PHP</Badge>
-        <Badge variant="outline">Python</Badge>
-        <Badge variant="outline">Django</Badge>
-      </>
-    ),
-    period: <p>2022 - 2025</p>
   },
 ]
 

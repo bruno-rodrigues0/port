@@ -63,7 +63,6 @@ export default function Stack() {
   )
 }
 
-
 export function StackItem({num, label, className, children, ...props}: StackItemProps) {
   return (
     <li className={cn(

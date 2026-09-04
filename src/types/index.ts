@@ -3,9 +3,12 @@ import { ReactNode } from "react"
 export type Project = {
   key: string,
   title: string,
-  meta: string | ReactNode,
+  period: {
+    start: string,
+    end: string | null
+  },
   description: string | ReactNode,
-  labels?: ReactNode,
+  labels?: string[],
   url: string,
   logo: string | ReactNode
 }
@@ -23,8 +26,10 @@ export type Education = {
   school: string,
   degree?: string,
   fieldOfStudy?: string,
-  period: string | ReactNode,
+  period: {
+    start: string,
+    end: string | null,
+  },
   description: string | ReactNode,
-  labels ?: ReactNode,
-  logo: string | ReactNode
+  labels ?: string[],
 }

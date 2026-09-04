@@ -1,5 +1,4 @@
-import { CodeXml, Infinity } from "lucide-react";
-import { Badge } from "../components/ui/badge";
+import { CodeXml } from "lucide-react";
 import { Project } from "../types";
 import { PythonIcon } from "../components/icons";
 
@@ -7,7 +6,14 @@ export const PROJECTS: Project[] = [
   {
     key: "ayuwoke",
     title: "Ayuwoke Time CInmulator",
-    meta: <p className="flex items-center gap-1"><span>05.2026 - 06.2026</span></p>,
+    url: "https://github.com/bruno-rodrigues0/projeto-ip",
+    labels: ["Python", "pygame", "numpy"],
+    logo: <PythonIcon className="w-5"/>,
+    period: {
+      start: "05.2026",
+      end: "06.2026",
+    },
+
     description: (
       <>
         <p>An open source game created with pygame for the final project of &quot;programing introduction&quot; discipline</p>
@@ -20,54 +26,42 @@ export const PROJECTS: Project[] = [
         </ul>
       </>
     ),
-    url: "https://github.com/bruno-rodrigues0/projeto-ip",
-    labels: (
-      <>
-        <Badge variant="outline" className="bg-primary-foreground">Python</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">pygame</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">numpy</Badge>
-      </>
-    ),
-    logo: <PythonIcon />
   },
+
   {
     key: "apple_website",
     title: "Apple Website",
-    meta: <p className="flex items-center gap-1"><span>08.2026 - </span><Infinity width={18}/> </p>,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quos libero sit incidunt officia consequuntur, animi debitis dolorum ipsam voluptate nesciunt optio rem cumque totam accusamus illum voluptatibus hic quam!",
     url: "",
-    labels: (
+    labels: ["Next.js", "Typescript", "gsap", "shadcn/ui", "next-video"],
+    logo: <CodeXml className="w-5"/>,
+    period: {
+      start: "08.2026",
+      end: null,
+    },
+
+    description: (
       <>
-        <Badge variant="outline" className="bg-primary-foreground">Next.js</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">Typescript</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">Gsap</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">shadcnui</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">next-video</Badge>
+        <p>iPhone 15 Pro presentation webpage built with Next.js and gsap.</p>
+        <ul className="list-disc marker:text-ring list-inside">
+          <li>Animations with gsap.</li>
+          <li>3D animations with tree.js.</li>
+          <li>Modern interfaces with Tailwindcss.</li>
+        </ul>
       </>
     ),
-    logo: <CodeXml className="w-5"/>
   },
+
   {
     key: "concord",
     title: "Concord",
-    meta: <p className="flex items-center gap-1"><span>01.2026 - </span><Infinity width={18}/> </p>,
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quos libero sit incidunt officia consequuntur, animi debitis dolorum ipsam voluptate nesciunt optio rem cumque totam accusamus illum voluptatibus hic quam!",
     url: "",
-    labels: (
-      <>
-        <Badge variant="outline" className="bg-primary-foreground">Next.js</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">Typescript</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">shadcnui</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">Fastify</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">Swagger</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">Zod</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">Better-auth</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">Postgres</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">Prisma</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">Nginx</Badge>
-        <Badge variant="outline" className="bg-primary-foreground">Docker</Badge>
-      </>
-    ),
-    logo: <CodeXml className="w-5"/>
+    labels: ["Next.js", "Typescript", "shadcn/ui", "Fastify", "Swagger", "zod",  "better-auth", "Postgresql", "Prisma", "nginx", "Docker", "Websocket"],
+    logo: <CodeXml className="w-5"/>,
+    period: {
+      start: "01.2026",
+      end: null,
+    },
+
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quos libero sit incidunt officia consequuntur, animi debitis dolorum ipsam voluptate nesciunt optio rem cumque totam accusamus illum voluptatibus hic quam!",
   },
 ]
