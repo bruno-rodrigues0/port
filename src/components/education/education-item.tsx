@@ -25,7 +25,7 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
 
   useEffect(() => {
     if (defaultOpen) chevronsRef.current?.startAnimation()
-  }, [])
+  }, [defaultOpen])
 
   return (
     <div className="group/education-item relative before:absolute before:left-3 before:h-full before:w-px before:bg-muted mb-4 mt-4">

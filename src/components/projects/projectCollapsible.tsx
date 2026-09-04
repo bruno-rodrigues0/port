@@ -16,7 +16,7 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
 
   useEffect(() => {
     if (defaultOpen) chevronsRef.current?.startAnimation()
-  }, [])
+  }, [defaultOpen])
 
   const handleOpen = () => {
     setOpen(prev => !prev)

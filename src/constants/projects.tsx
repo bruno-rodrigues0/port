@@ -1,6 +1,7 @@
 import { CodeXml } from "lucide-react";
 import { Project } from "../types";
 import { PythonIcon } from "../components/icons";
+import { BSMark } from "../components/bs-mark";
 
 export const PROJECTS: Project[] = [
   {
@@ -23,6 +24,27 @@ export const PROJECTS: Project[] = [
           <li>Object Oriented Programing.</li>
           <li>Modularization.</li>
           <li>Git and github.</li>
+        </ul>
+      </>
+    ),
+  },
+
+  {
+    key: "brunofzn",
+    title: "brunofzn.dev",
+    url: "https://brunofzn.vercel.app",
+    labels: ["Next.js", "Typescript", "shadcn/ui", "Tailwindcss", "chanhdai.com"],
+    logo: <BSMark className="w-5"/>,
+    period: {
+      start: "08.2026",
+      end: null,
+    },
+
+    description: (
+      <>
+        <p>A pixel-perfect portifolio inspired by chanhdai.com</p>
+        <ul className="list-disc marker:text-ring list-inside">
+          <li>Hand-made portiolio and my favorite project.</li>
         </ul>
       </>
     ),
@@ -62,6 +84,16 @@ export const PROJECTS: Project[] = [
       end: null,
     },
 
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quos libero sit incidunt officia consequuntur, animi debitis dolorum ipsam voluptate nesciunt optio rem cumque totam accusamus illum voluptatibus hic quam!",
+    description: (
+      <>
+        <p>A Discord clone with chats, servers and channels working.</p>
+        <ul className="list-disc marker:text-ring list-inside">
+          <li>Working with websocket and pub sub partern for messaging.</li>
+          <li>Using swagger for automatic documentation and endpoint testing.</li>
+          <li>Implementing type verifications with zod.</li>
+          <li>A complete REST API built with Fastify.</li>
+        </ul>
+      </>
+    )
   },
 ]
