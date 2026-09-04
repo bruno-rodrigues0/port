@@ -1,11 +1,11 @@
 "use client"
 import { useRef, useState } from "react"
-import { Education } from "../../constants"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible"
 import { cn } from "../../lib/utils"
 import { GraduationCapIcon } from "lucide-react"
 import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "../chevrons-up-down-icon"
 import { Separator } from "../ui/separator"
+import { Education } from "@/types"
 
 export function EducationItem({ item, defaultOpen }: { item: Education, defaultOpen: boolean}) {
   const [open, setOpen] = useState<boolean>(defaultOpen)
