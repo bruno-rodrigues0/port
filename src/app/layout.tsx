@@ -86,9 +86,6 @@ export const metadata: Metadata = {
   },
   metadataBase:  new URL(SITE_URL),
   applicationName: SITE_NAME,
-  verification: {
-    google: "t7pW-68zLqWd5pDS5P_FLDEytyLdsr7fO2cES8kzZ0M"
-  },
 
   robots: {
     index: true,
