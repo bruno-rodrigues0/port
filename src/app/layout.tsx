@@ -74,16 +74,21 @@ export const metadata: Metadata = {
   description: "Hi, I'm Bruno, a early-career software developer with approximately three years of focused study and hands-on practice in web development, currently working primarily with TypeScript and the modern JavaScript ecosystem.",
   creator: AUTHOR,
   authors: {name: AUTHOR, url: SITE_URL},
-  category: "portifolio",
+  category: "portfolio",
   keywords: [
     "next.js developer", "portfolio", "shadcnui",
     "pixel-perfect", "web developer",
     "recife", "typescript developer", "backend developer",
     "frontend developer", "full stack",
   ],
-
+  alternates: {
+    canonical: "/",
+  },
   metadataBase:  new URL(SITE_URL),
   applicationName: SITE_NAME,
+  verification: {
+    google: "t7pW-68zLqWd5pDS5P_FLDEytyLdsr7fO2cES8kzZ0M"
+  },
 
   robots: {
     index: true,
@@ -104,8 +109,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: OPENGRAPH_IMAGE,
-        width: 1200,
-        height: 630,
+        width: 1164,
+        height: 654,
         alt: "Photo of Bruno Silva"
       }
     ],
