@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Caveat} from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AUTHOR, LINKS, OPENGRAPH_IMAGE, SITE_NAME, SITE_URL } from "../lib/site-config";
 import { URL } from "url";
 
@@ -131,6 +132,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             }}
           />
           <Analytics />
+          <SpeedInsights />
           <ThemeProvider
           attribute="class"
           defaultTheme="system"
